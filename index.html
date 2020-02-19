@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Hello world!</title>
+    </head>
+    <body>
+        <h1>User List</h1>
+        <ul>
+            {{#each users}}
+            <li>Name: {{this.name}}</li>
+            <li>Age: {{this.age}}</li>
+            <br>
+        {{/each}}
+        </ul>
+    </body>
+</html>
+
+<!--
+    
+<!DOCTYPE html>
+<html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+  <body>
+    <p id="ignorePDF">don't print this to pdf</p>
+    <div>
+      <p>print this to pdf</p>
+    </div>
+  </body>
+</html>
+
+-->
