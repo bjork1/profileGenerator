@@ -1,0 +1,27 @@
+{
+  "name": "profilegenerator",
+  "version": "1.0.0",
+  "description": "Node Package",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "github-api": "^3.3.0",
+    "html-pdf": "^2.2.0",
+    "inquirer": "^7.0.4",
+    "pdf-creator-node": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjork1/profileGenerator.git"
+  },
+  "author": "Andrew Bjork",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjork1/profileGenerator/issues"
+  },
+  "homepage": "https://github.com/bjork1/profileGenerator#readme"
+}

@@ -1,58 +1,147 @@
+module.exports = function ProfileGen(userInfo) {
+
+    this.name = userInfo.name;
+
+    this.html = `<!DOCTYPE html>
+    <html>
+        <head>
+            <mate charest="utf-8" />
+            <title>Hello world!</title>
+        </head>
+        <body>
+            <h1>User List</h1>
+            <ul>
+                {{#each users}}
+                <li>Name: {{this.name}}</li>
+                <li>Age: {{this.age}}</li>
+                <br>
+            {{/each}}
+            </ul>
+        </body>
+    </html>`
+
+}
+
 var pdf = require('pdf-creator-node');
 var fs = require('fs');
 
 var html = fs.readFileSync('index.html','utf8');
 
+var inquirer = require("inquirer");
 
-var options = {
-    format: "A3",
-    orientation: "portrait",
-    border: "10mm",
-    header: {
-        height: "45mm",
-        contents: '<div style="text-align: center;">Author: Shyam Hajare</div>'
-    },
-    "footer": {
-        "height": "28mm",
-        "contents": {
-        first: 'Cover page',
-        2: 'Second page', // Any page number is working. 1-based index
-        default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
-        last: 'Last Page'
+var axios = require('axios');
+
+
+const ProfGen = require('./generator');
+
+
+
+
+//console.log(userDetails);
+
+
+
+
+
+//Prompted for username and favorite color
+
+this.getUserDetails = async function() {
+
+inquirer
+  .prompt([
+
+    {
+      type: "input",
+      message: "What is your username?",
+      name: "username"
+      },
+    {
+      type: "input",
+      message: "What is your favorite color?",
+      name: "color"
     }
-}
-};
-
-var users = [
-    {
-        name:"Shyam",
-        age:"26"
-    },
-    {
-        name:"Navjot",
-        age:"26"
-    },
-    {
-        name:"Vitthal",
-        age:"26"
-    }
-]
-var document = {
-    html: html,
-    data: {
-        users: users
-    },
-    path: "./output.pdf"
-};
+    ])
 
 
-pdf.create(document, options)
-    .then(res => {
-        console.log(res)
-    })
-    .catch(error => {
-        console.error(error)
+
+
+    .then(answers => {
+
+        const URL = 'https://api.github.com/users/';
+        console.log(URL + answers.username);
+
+
+        var options = {
+            format: "A3",
+            orientation: "portrait",
+            border: "10mm",
+            header: {
+                height: "45mm",
+                contents: '<div style="text-align: center; background-color:' + answers.color + '">Author: Shyam Hajare</div>'
+            },
+
+            "footer": {
+                "height": "28mm",
+                "contents": {
+                first: 'Cover page',
+                2: 'Second page', // Any page number is working. 1-based index
+                default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
+                last: 'Last Page'
+            }
+        }
+        };
+        
+        var users = [
+            {
+                name: answers.username,
+                age: axios.get('https://api.github.com/users/' + answers.username + '')
+            },
+            {
+                name:"Navjot",
+                age:"26"
+            },
+            {
+                name:"Vitthal",
+                age:"26"
+            }
+        ]
+
+        
+        var document = {
+            html: html,
+
+            
+            data: {
+                users: users,
+            },
+            path: "./output.pdf"
+        };
+
+           
+
+        // Know this works
+        
+        
+        pdf.create(document, options)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(error => {
+                console.error(error)
+            });
+        
+
+
     });
+
+}
+
+    //PDF profile is generated
+
+
+
+
+    
 
 
 /*
