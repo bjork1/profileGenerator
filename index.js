@@ -31,6 +31,8 @@ var inquirer = require("inquirer");
 
 var axios = require('axios');
 
+const https = require('https');
+
 
 const ProfGen = require('./generator');
 
@@ -44,8 +46,10 @@ const ProfGen = require('./generator');
 
 
 //Prompted for username and favorite color
+this.userDetails = {};
 
-this.getUserDetails = async function() {
+//this.getUserDetails = async function() {
+
 
 inquirer
   .prompt([
@@ -67,8 +71,7 @@ inquirer
 
     .then(answers => {
 
-        const URL = 'https://api.github.com/users/';
-        console.log(URL + answers.username);
+        console.log(https.get('https://api.github.com/users/' + answers.username.name))
 
 
         var options = {
@@ -77,7 +80,7 @@ inquirer
             border: "10mm",
             header: {
                 height: "45mm",
-                contents: '<div style="text-align: center; background-color:' + answers.color + '">Author: Shyam Hajare</div>'
+                contents: '<div style="text-align: center; background-color:' + answers.color + '">Author: Andrew Bjork</div>'
             },
 
             "footer": {
@@ -94,15 +97,7 @@ inquirer
         var users = [
             {
                 name: answers.username,
-                age: axios.get('https://api.github.com/users/' + answers.username + '')
-            },
-            {
-                name:"Navjot",
-                age:"26"
-            },
-            {
-                name:"Vitthal",
-                age:"26"
+                age: https.get('https://api.github.com/users/' + answers.username.name)
             }
         ]
 
@@ -134,7 +129,7 @@ inquirer
 
     });
 
-}
+
 
     //PDF profile is generated
 
