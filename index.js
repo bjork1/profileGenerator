@@ -106,35 +106,25 @@ inquirer
                     <body style = "background-color: ${answers.color};">
                         
                         
-                        <div style = "text-align: center">
+                        <div style = "text-align: center; margin-top: 50mm">
                             <img src = ${avatar_url} >
                         </div>
-                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
+                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm; font-size: 48px">
                             <h1>${answers.username}</h1>
                             <h2>${location}</h2>
                         </div>
-                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
+                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 50mm; margin-right: 50mm; margin-top: 10mm; margin-bottom: 10mm; font-size: 36px">
                             <p>${bio}</p>
                             <p> <a href = "${html_url}" target = "_blank">Click here to view my Github Profile</a> </p>
                         </div>
-                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
+                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 75mm; margin-right: 75mm; margin-top: 10mm; margin-bottom: 100mm; font-size: 36px; padding-bottom: 20px">
                             <h2>Statistics:</h2>
                             <div>Number of repositories: ${public_repos}</div>
                             <div>Number of followers: ${followers}</div>
                             <div>Number following: ${following}</div>
 
                         </div>
-                        
 
-
-                        <ul>
-                            
-                            <li>Avatar_url : ${blog}</li>
-                            <li>Avatar_url : ${email}</li>
-                            <li>Avatar_url : ${public_gists}</li>
-                            
-                      
-                        </ul>
                     </body>
                 </html>`
 

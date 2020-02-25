@@ -14,3 +14,7 @@ The background image will represent the color the user inputs. The rest of the i
 - Link to Github profile page
 - Statistics, which include Number of repositories, Number of followers, and Number following
 
+Here is an example of an outputed PDF:
+
+![](filename%20Profile_Andrew.png)
+
