@@ -79,8 +79,8 @@ inquirer
                 
                 let avatar_url = response.data.avatar_url;
                 
-                let url = response.data.url
-                let html_url = response.html_url;
+                let url = response.data.url;
+                let html_url = response.data.html_url;
                 
                 let blog = response.data.blog;
                 let location = response.data.location;
@@ -92,7 +92,9 @@ inquirer
                 let followers = response.data.followers;
                 let following = response.data.following;
                 
-                console.log(response)
+                console.log(response);
+                console.log(html_url);
+
                 html = `<!DOCTYPE html>
                 <html>
                     <head>
@@ -113,7 +115,7 @@ inquirer
                         </div>
                         <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
                             <p>${bio}</p>
-                            <p>View my Github profile at: ${url} </p>
+                            <p> <a href = "${html_url}" target = "_blank">Click here to view my Github Profile</a> </p>
                         </div>
                         <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
                             <h2>Statistics:</h2>
@@ -127,7 +129,6 @@ inquirer
 
                         <ul>
                             
-                            <li>Avatar_url : ${html_url}</li>
                             <li>Avatar_url : ${blog}</li>
                             <li>Avatar_url : ${email}</li>
                             <li>Avatar_url : ${public_gists}</li>
@@ -151,7 +152,9 @@ inquirer
                 var options = {
                     format: "A3",
                     orientation: "portrait",
-                    border: "10mm",
+                    border: "10mm"
+
+                    /*
                     header: {
                         height: "45mm",
                         contents: '<div style="text-align: center; background-color:' + answers.color + '">Author: Andrew Bjork</div>'
@@ -166,6 +169,7 @@ inquirer
                             last: 'Last Page'
                         }
                     }
+                    */
                 };
 
                 pdf.create(document, options)
