@@ -100,22 +100,35 @@ inquirer
                         <title>Hello world!</title>
                     </head>
                     <body>
-                        <h1>User List</h1>
+                        
+                        
+                        <div class = "center">
+                            <img src = ${avatar_url} >
+                        </div>
+                        <div class = "center">
+                            <h1>${answers.username}</h1>
+                            <h2>${location}</h2>
+                        </div>
+                        <div class = "center>
+                            <p>${bio}</p>
+                            <p>View my Github profile at: ${url} </p>
+                        </div>
+                        <div class = "center">
+                            <h2>Statistics:</h2>
+                            <div>Number of repositories: ${public_repos}</div>
+                            <div>Number of followers: ${followers}</div>
+                            <div>Number following: ${following}</div>
+
+                        </div>
+                        
+
+
                         <ul>
                             
-                            <li>Name: ${answers.username}</li>
-                            <li>Avatar_url :<img src = ${avatar_url} ></li>
-                            <li>Avatar_url : ${url}</li>
                             <li>Avatar_url : ${html_url}</li>
                             <li>Avatar_url : ${blog}</li>
-                            <li>Avatar_url : ${location}</li>
                             <li>Avatar_url : ${email}</li>
-                            <li>Avatar_url : ${bio}</li>
-                            <li>Avatar_url : ${public_repos}</li>
                             <li>Avatar_url : ${public_gists}</li>
-                            <li>Avatar_url : ${followers}</li>
-                            <li>Avatar_url : ${following}</li>
-                            <li>Age: 0</li>
                             
                       
                         </ul>
