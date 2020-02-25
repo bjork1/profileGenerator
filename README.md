@@ -18,3 +18,8 @@ Here is an example of an outputed PDF:
 
 ![](Profile_Example.PNG)
 
+Here is an animated GIF of how the node.js file functions:
+
+![Alt Text](https://media.giphy.com/media/ju0FA59axFnBVjFJ9z/giphy.gif)
+
+
