@@ -98,22 +98,24 @@ inquirer
                     <head>
                         <mate charest="utf-8" />
                         <title>Hello world!</title>
+
+                        
                     </head>
-                    <body>
+                    <body style = "background-color: ${answers.color};">
                         
                         
-                        <div class = "center">
+                        <div style = "text-align: center">
                             <img src = ${avatar_url} >
                         </div>
-                        <div class = "center">
+                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
                             <h1>${answers.username}</h1>
                             <h2>${location}</h2>
                         </div>
-                        <div class = "center>
+                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
                             <p>${bio}</p>
                             <p>View my Github profile at: ${url} </p>
                         </div>
-                        <div class = "center">
+                        <div style = "background-color: white; text-align: center; border: 1px solid black; margin-left: 100mm; margin-right: 100mm; margin-top: 10mm; margin-bottom: 10mm">
                             <h2>Statistics:</h2>
                             <div>Number of repositories: ${public_repos}</div>
                             <div>Number of followers: ${followers}</div>
