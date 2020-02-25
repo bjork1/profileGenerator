@@ -16,5 +16,5 @@ The background image will represent the color the user inputs. The rest of the i
 
 Here is an example of an outputed PDF:
 
-![](filename%20Profile_Andrew.png)
+![](filename%20output.pdf)
 
